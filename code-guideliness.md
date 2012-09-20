@@ -1,10 +1,21 @@
-1. Always clear all comments when work is done no matter if is yours or not.
-2. Always wrap in {} [if, for, foreach,…] statement
+# C# Coding Guideliness
 
-    Correct one line code: 
+* Always clear all comments when work is done no matter if is yours or not.
+
+* Always wrap in {} [if, for, foreach,…] statement even the one line code. \\
+One liner rule is when there is possibilty that code will expand, mostly always! \\
+Except when there is a single condition and then the line for throwing exception is the when {} can be omited, because this code will never expand in multi-line.
+
+    ```csharp
+    // good
     if (isGood) { return good; }
-    Incorrect one line of code:
+
+    // bad
     if (isGood) return good;
+
+    // except
+    if (isGood) throw new TooGoodTooBeTrueException("Some valid description");
+    ```
 
 3. Before the start of [if, for, foreach,…] block and end of block statement make one break space.
 4. Always use string.Empty instead of ""
