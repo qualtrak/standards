@@ -2,9 +2,9 @@
 
 * Always clear all comments when work is done no matter if is yours or not.
 
-* Always wrap in {} [if, for, foreach,…] statement even the one line code. \\
-One liner rule is when there is possibilty that code will expand, mostly always! \\
-Except when there is a single condition and then the line for throwing exception is the when {} can be omited, because this code will never expand in multi-line.
+* Always wrap in {} [if, for, foreach,…] statement even the one line code.
+  One liner rule is when there is possibilty that code will expand, mostly always!
+  Except when there is a single condition and then the line for throwing exception is the when {} can be omited, because this code will never expand in multi-line.
 
     ```csharp
     // good
