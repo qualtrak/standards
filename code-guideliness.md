@@ -1,19 +1,24 @@
 1. Always clear all comments when work is done no matter if is yours or not.
 2. Always wrap in {} [if, for, foreach,…] statement
-Correct one line code: 
-if (isGood) { return good; }
-Incorrect one line of code:
-if (isGood) return good;
+
+    Correct one line code: 
+    if (isGood) { return good; }
+    Incorrect one line of code:
+    if (isGood) return good;
+
 3. Before the start of [if, for, foreach,…] block and end of block statement make one break space.
 4. Always use string.Empty instead of ""
 5. Inline comment should be right above the line it is commenting without break space.
-Correct:
-// Set is good to be good. The ok inline comment
-bool isGood = true;
-Incorrect:
-// Set is good to be not. The not ok inline comment
 
-bool isGood = false;
+    Correct:
+    // Set is good to be good. The ok inline comment
+    bool isGood = true;
+
+    Incorrect:
+    // Set is good to be not. The not ok inline comment
+
+    bool isGood = false;
+
 6. Do not use #Region for hiding the code. Better is to move the code to the end of the class. Or use VS keys [Ctrl+A [Ctrl+M, Ctrl+M]] that will collapse whole document.
 7. The order of members in Class should be:
 	* Fields.
@@ -24,7 +29,8 @@ bool isGood = false;
 	* Protected Methods.
 	* Private Method.	
 8. Preferably use "this" keyword for all members within a current Class and those inherited Class(es).
-9. All private fields should start with underscore as "this._isGood". 
+9. All private fields should start with underscore as:
+    this._isGood 
 10. Use Interfaces for mostly everything, or use Abstract Classes when appropriate.
 11. Avoid inheritance from normal Class, inherit from Abstract Class.
 11. Avoid deeply nested inheritance, the one level of inheritance should be preferable.
@@ -36,14 +42,14 @@ bool isGood = false;
 17. Remove any break spaces in code that are more than one line or they are one line but they have no sense to be applied at first place! 
 18. User "var" keyword only when on right side there is Type [int, string, Order, List<Order>,…].
 Exception: Use "var" for LINQ queries only if the result is of "Anonymous Type".
-Correct:
-var goods = new List<Good>();
+    Correct:
+    var goods = new List<Good>();
 
-Incorrect:
-var goods = this.GetGoodsById(goodId);  
+    Incorrect:
+    var goods = this.GetGoodsById(goodId);  
 
-Correct:
-ICollection<Good> goods = this.GetGoodsById(goodId);
+    Correct:
+    ICollection<Good> goods = this.GetGoodsById(goodId);
 19. Write logical/meaningful names especially in services or APIs, no matter how long they can be.
 20. If the member is of bool return type make sure it is called proper with [is|has|have] at the beginning of sentence. 
 21. If there are local variables in method make sure that they are at the beginning of method.
@@ -58,8 +64,3 @@ var team = this.teamDropDown.SelectedItem as Team;
 
 Exception Handling!!
 Null Reference checking!!
-
-            var licenses = _license.Request().GetMaxLicenses();            var numberOfUsers = _entities.Users.Count(w => w.TenantId == _tenant.Id);            var counter = 0;            var sysGroup = this.GetGroup("System Administrator");            foreach (var user in Enumerable.TakeWhile(_entities.Users.Where(w => w.TenantId == _tenant.Id && w.UserGroups.Count(s => s.GroupId == sysGroup.Id) == 0), user => counter < (numberOfUsers - licenses)))            {                user.IsActive = false;                counter++;            }
-
-
- var licenses = this._license.Request().GetMaxLicenses();            var numberOfUsers = this._context.Users.Count(w => w.TenantId == this._tenant.Id);            var counter = 0;            var sysRole = this.GetGroup("System Administrator");            ICollection<User> agents = this._context.Users.Include(x => x.UserRoles)                                                          .Where(w => w.TenantId == this._tenant.Id                                                                  && w.UserRoles.Count(s => s.RoleId == sysRole.Id) == 0)                                                          .ToList();            foreach (User user in agents)            {                if (counter < (numberOfUsers - licenses))                {                    user.IsActive = false;                    counter++;                }                else                {                    break;                }            }
